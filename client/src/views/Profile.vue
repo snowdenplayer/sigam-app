@@ -1,11 +1,11 @@
 <template>
   <div class="profile">
+    <h1>Profile</h1>
     <div class="card">
-      <button class="btn" @click="showUser">ko</button>
-      <ul class="list-group" >
-        <li class="list-group__item" >Email: {{user.name}}</li>
-        <li class="list-group__item">Username: {{ user.username}}</li>
-        <li class="list-group__item">Name: {{ user.name }}</li>
+      <ul class="list-group">
+        <li class="list-group-item">Name: {{ user.name }}</li>
+        <li class="list-group-item">Username: {{ user.username }}</li>
+        <li class="list-group-item">Email: {{ user.email }}</li>
       </ul>
     </div>
   </div>

@@ -10,7 +10,7 @@ const state = {
 const getters = {
     isLoggedIn: state => !!state.token,
     authState: state => !!state.status,
-    user: state => !!state.user,
+    user: state => state.user,
     error: state => state.error
 
 };
