@@ -22,7 +22,6 @@ app.use(passport.initialize());
 require('./config/passport')(passport);
 
 const db = require('./config/keys').mongoURL;
-console.log('hello')
 mongoose.connect(db, {useNewUrlParser:true}).then(() => {
     console.log(`Datrabse ${db}`)
 }).catch(err => console.log(err));
@@ -30,7 +29,7 @@ mongoose.connect(db, {useNewUrlParser:true}).then(() => {
 const users = require('./routes/api/users');
 app.use('/api/users', users);
 
-app.get('*',(req,res) => {
+app.get('/',(req,res) => {
     res.sendFile(path.join((__dirname, 'public/index.html')))
 })
 
