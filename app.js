@@ -22,7 +22,7 @@ app.use(passport.initialize());
 require('./config/passport')(passport);
 
 const db = require('./config/keys').mongoURL;
-
+console.log('hello')
 mongoose.connect(db, {useNewUrlParser:true}).then(() => {
     console.log(`Datrabse ${db}`)
 }).catch(err => console.log(err));
