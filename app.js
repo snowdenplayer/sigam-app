@@ -21,7 +21,7 @@ app.use(passport.initialize());
 
 require('./config/passport')(passport);
 
-const db = require('./config/keys').mongoURI;
+const db = require('./config/keys').mongoURL;
 
 mongoose.connect(db, {useNewUrlParser:true}).then(() => {
     console.log(`Datrabse ${db}`)
