@@ -4,16 +4,25 @@ const mongoose = require('mongoose');
 const path = require('path');
 const cors = require('cors');
 const passport = require('passport');
+
 const app = express();
+
 app.use(bodyParser.urlencoded({
     extended: false
 }));
+
 app.use(bodyParser.json());
+
 app.use(cors());
+
 app.use(express.static(path.join(__dirname,'public')));
+
 app.use(passport.initialize());
+
 require('./config/passport')(passport);
+
 const db = require('./config/keys').mongoURI;
+
 mongoose.connect(db, {useNewUrlParser:true}).then(() => {
     console.log(`Datrabse ${db}`)
 }).catch(err => console.log(err));
